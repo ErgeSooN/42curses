@@ -6,7 +6,7 @@
 /*   By: ayaman <ayaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 10:29:36 by ayaman            #+#    #+#             */
-/*   Updated: 2022/02/25 15:34:48 by ayaman           ###   ########.fr       */
+/*   Updated: 2022/02/26 18:49:44 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ char	*ft_read_to_left_str(int fd, char *kalan);
 char	*get_next_line(int fd);
 //get_next_line_utils
 size_t  ft_strlen(const char *s);
+size_t  ft_strlcat(char *dest, const char *src, size_t size);
+void    ft_strncmp(char *dest, const char *src, size_t size);
 char    *ft_strchr(const char *s, int c);
 char    *ft_strjoin(char *s1, char *s2);
+
 
 #endif
 

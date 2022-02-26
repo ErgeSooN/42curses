@@ -6,7 +6,7 @@
 /*   By: ayaman <ayaman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:32:33 by ayaman            #+#    #+#             */
-/*   Updated: 2022/02/25 17:42:11 by ayaman           ###   ########.fr       */
+/*   Updated: 2022/02/26 18:49:43 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ size_t  ft_strlen(const char *s)
     }
     return (sayac);
 }
-
 char    *ft_strchr(const char *s, int c)
 {   
     int s_len;
@@ -44,7 +43,6 @@ char    *ft_strchr(const char *s, int c)
     }
     return (0);
 }
-//satır 67 ve 70 de hata olabilir "-1" den başlatmayı dene!
 char    *ft_strjoin(char *s1, char *s2)
 {   
     size_t  sayac1;
@@ -71,4 +69,32 @@ char    *ft_strjoin(char *s1, char *s2)
     s3[sayac1 + sayac2] = 0;
     free(s1);
     return (s3);
+}
+size_t  ft_strlcat(char *dest, const char *src, size_t size)
+{
+    size_t  sayacdest;
+    size_t  sayacsrc;
+    size_t  index;
+
+    sayacdest = ft_strlen(dest);
+    sayacsrc = ft_strlen(src);
+    sayacsrc += sayacdest;
+    if (sayacdest > size)
+        sayacsrc = sayacsrc - sayacdest + size;
+    while (src[sayacsrc] && (sayacdest+1) < size)
+        dest[sayacdest++] = src[sayacsrc++];
+    dest[sayacdest] = '\0';
+    return (index);
+}
+void    ft_strncpy(char *dest, const char *src, size_t size)
+{
+    size_t  i;
+
+    i = 0;
+    while (i < size - 1 && src[i])
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    dest[i] = '\0';
 }
