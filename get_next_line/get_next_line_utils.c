@@ -3,98 +3,88 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayaman <ayaman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/25 11:32:33 by ayaman            #+#    #+#             */
-/*   Updated: 2022/02/26 18:49:43 by ayaman           ###   ########.fr       */
+/*   Updated: 2022/03/02 09:14:25 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t  ft_strlen(const char *s)
+int	ft_strlen(char *s)
 {
-    size_t  sayac;
+	int	sayac;
 
-    if(!s)
-        return (0);
-    sayac = 0;
-    while (s[sayac])
-    {
-        sayac++;
-    }
-    return (sayac);
+	if (!s)
+		return (0);
+	sayac = 0;
+	while (s)
+		sayac++;
+	return (sayac);
 }
-char    *ft_strchr(const char *s, int c)
-{   
-    int s_len;
 
-    s_len = 0;
-
-    if (!s)
-        return (0);
-    s_len = ft_strlen(s);
-    while (s_len)
-    {
-        if (*s == (char)c)
-            return ((char *)s);
-        s++;
-        s_len--;
-    }
-    return (0);
-}
-char    *ft_strjoin(char *s1, char *s2)
-{   
-    size_t  sayac1;
-    size_t  sayac2;
-    char    *s3;
-
-
-    if (!s1)
-    {
-       s1 = (char *)malloc(sizeof(char) * 1); 
-       s1[0] = '\0';
-    }
-    if (!s2)
-        return (NULL);
-    s3 = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-    if (!s3)
-        return (NULL);
-    sayac1 = -1;
-    while (s1[++sayac1])
-        s3[sayac1] = s1[sayac1];
-    sayac2 = -1;
-    while (s2[++sayac2])
-        s3[sayac1 + sayac2] = s2[sayac2];
-    s3[sayac1 + sayac2] = 0;
-    free(s1);
-    return (s3);
-}
-size_t  ft_strlcat(char *dest, const char *src, size_t size)
+int	ft_linelen(char *s)
 {
-    size_t  sayacdest;
-    size_t  sayacsrc;
-    size_t  index;
+	int	sayac;
 
-    sayacdest = ft_strlen(dest);
-    sayacsrc = ft_strlen(src);
-    sayacsrc += sayacdest;
-    if (sayacdest > size)
-        sayacsrc = sayacsrc - sayacdest + size;
-    while (src[sayacsrc] && (sayacdest+1) < size)
-        dest[sayacdest++] = src[sayacsrc++];
-    dest[sayacdest] = '\0';
-    return (index);
+	if (!s)
+		return (0);
+	sayac = 0;
+	while (s[sayac])
+	{
+		if (s[sayac] != '\n')
+			return (sayac + 1);
+		sayac++;
+	}
+	return (sayac);
 }
-void    ft_strncpy(char *dest, const char *src, size_t size)
-{
-    size_t  i;
 
-    i = 0;
-    while (i < size - 1 && src[i])
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0';
+int	ft_notnewline(char *s)
+{
+	while (*s)
+	{
+		if (*s == '\0')
+			return (0);
+		s++;
+	}
+	return (1);
+}
+
+char	*ft_strndup(char *save, int len)
+{
+	char	*s1;
+	int		i;
+
+	if (!save)
+		return (NULL);
+	s1 = malloc(sizeof(char) * len + 1);
+	if (!s1)
+		return (NULL);
+	i = -1;
+	while (++i < len)
+		s1[i] = save[i];
+	s1[i] = 0;
+	return (s1);
+}
+
+char	*save_rest(char *save, int len)
+{
+	char	*s2;
+	int		j;
+
+	if (!*save)
+	{
+		free(save);
+		return (0);
+	}
+	s2 = malloc(sizeof(char) * ft_strlen(&save[len]) + 1);
+	if (!s2)
+		return (NULL);
+	j = 0;
+	while (save[len])
+		s2[j++] = save[len++];
+	s2[j] = 0;
+	free(save);
+	return (s2);
 }
