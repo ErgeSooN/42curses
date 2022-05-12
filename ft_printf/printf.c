@@ -6,16 +6,11 @@
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 14:06:19 by ayaman            #+#    #+#             */
-/*   Updated: 2022/05/12 16:21:11 by ayaman           ###   ########.fr       */
+/*   Updated: 2022/05/12 17:28:14 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "printf.h"
-
-int	ft_putchar(char a)
-{
-	return (write(1, &a, 1));
-}
 
 int	ft_putstr(char *str)
 {
@@ -29,7 +24,7 @@ int	ft_putstr(char *str)
 	return (sayac);
 }
 
-static	int	write_hex(unsigned long long nbr, char x)
+int	write_hex(unsigned long long nbr, char x)
 {
 	int	i;
 
@@ -45,7 +40,7 @@ static	int	write_hex(unsigned long long nbr, char x)
 	return (i);
 }
 
-static	int	write_dec(long long nbr)
+int	write_dec(long long nbr)
 {
 	int	ret_value;
 
@@ -116,9 +111,9 @@ int	ft_printf(const char *str, ...)
 	return (ssayac);
 }
 
-/*int main()
+int main()
 {
 	int a = -1;
 	ft_printf("%c %u %p %d \n", 'a', a, &a, a);
 	printf("%c %u %p %d", 'a', a, &a, a);
-}*/
+}

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayaman <ayaman@student.42kocaeli.com.tr    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/07 14:06:30 by ayaman            #+#    #+#             */
-/*   Updated: 2022/05/11 15:14:28 by ayaman           ###   ########.fr       */
+/*   Created: 2022/05/11 17:39:59 by ayaman            #+#    #+#             */
+/*   Updated: 2022/05/12 17:27:52 by ayaman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@
 # include <limits.h>
 # include <stdio.h>
 
-int			ft_printf(const char *str, ...);
-static int	write_hex(unsigned long long nbr, char x);
-static int	write_dec(long long nbr);
-int			ft_putnbr(int nbr);
-int			ft_putstr(char *str);
-int			ft_putchar(char a);
-int			ft_format(char a, va_list arg);
+int	t_printf(const char *str, ...);
+int	write_hex(unsigned long long nbr, char x);
+int	write_dec(long long nbr);
+int ft_putnbr(int nbr);
+int	ft_putstr(char *str);
+int	ft_putchar(char a);
+int	ft_format(char a, va_list arg);
 
 #endif
