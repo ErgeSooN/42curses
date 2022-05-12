@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef PRINTF_H
+# define PRINTF_H
 
 # define HEXA_SMALL  "0123456789abcdef"
 # define HEXA_BIG  "0123456789ABCDEF"
@@ -22,13 +22,12 @@
 # include <limits.h>
 # include <stdio.h>
 
-int ft_printf(const char *str, ...);
+int			ft_printf(const char *str, ...);
 static int	write_hex(unsigned long long nbr, char x);
 static int	write_dec(long long nbr);
-int ft_putnbr(int nbr);
-int ft_putstr(char *str);
-int ft_putchar(char a);
-int ft_format(char a, va_list arg);
-
+int			ft_putnbr(int nbr);
+int			ft_putstr(char *str);
+int			ft_putchar(char a);
+int			ft_format(char a, va_list arg);
 
 #endif
