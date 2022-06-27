@@ -5,7 +5,7 @@ AMAÇ
 Printf fonksiyonunu yazmak.
 ***
 ***
-Aşağıda belirtilen yerde tanımda ilk parametre, str (tırnak içerisindeki bölüm); ikinci parametre, birden fazla değer alabileceği anlamına gelen "..." konulur.
+Aşağıda belirtilen tanımda ilk parametre, str (tırnak içerisindeki bölüm); ikinci parametre, birden fazla değer alabileceği anlamına gelen "..." konulur.
 
 ~~~
 	ft_printf(const char *str, ...)
@@ -31,16 +31,16 @@ va_arg; args'deki değerin, data type'ını (veri tipini) verir.
 	if (str == 'c')
 		len += ft_putchar(va_arg(args, int));
 ~~~
-Şimdiiii... Biz va_arg'ın içerisine tüm args'ları atıyorsak nasıl oluyor da bilgisayar args'ları tek tek alıp, str'deki değerler ile eşleyebiliyor? 
+Şimdiiii... Biz va_arg'ın içerisine tüm args'ları attığımızda, nasıl oluyor da bilgisayar args'ları tek tek alıp, str'deki değerler ile eşleyebiliyor? 
 yani ilk olarak " 'str' = 'c' " olduğunda 'a'yı okunduktan sonra " 'str' = 'd' " olduğunda 7'yi almalı.
 
-peki bu nasıl oluyor? va_arg, okuduğu yeri tekrar okumaz (read fonkiyonu gibi). Biz tüm veri'leri va_args'ın içine atarız fakat o, aldığı yeri bir daha almaz. printf'in çalışma mantığı budur. Bu nedenle str ile args'lar sırası ile yazılmalıdır.
+peki bu nasıl oluyor? va_arg, okuduğu yeri tekrar okumaz (read fonkiyonu gibi). Biz tüm verileri va_args'ın içine atarız fakat o, aldığı yeri bir daha almaz. printf'in çalışma mantığı budur. Bu nedenle str ile args'lar sırası ile yazılmalıdır.
 ~~~
 	ft_printf("%c\n%d\n%p\n%s\n%x\n%u\n%%", 'a', 7, "holla", 15, 0);
 	           ----------str--------------  ---------args---------
 ~~~
 
-4- va_end    --> args'ların bittiği anlamına getir.
+4- va_end    --> args'ların bittiği anlamına gelir.
 ~~~
 	va_end(args);
 ~~~
