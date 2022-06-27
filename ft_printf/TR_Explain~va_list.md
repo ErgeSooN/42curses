@@ -29,7 +29,7 @@ va_arg; args'deki değerin, data type'ını (veri tipini) verir.
 //va_arg'ın okuyacağı args'ın data type'ını (veri tipini) belirtmiş oluruz. Örnek olarak aşağıdaki satırda artık "str"de c olan yerler int tipi alır. 
 ~~~
 	if (str == 'c')
-		len += ft_putchar(va_arg(args, int));
+		len += ft_putchar(va_arg(args, int)); 
 ~~~
 Şimdiiii... Biz va_arg'ın içerisine tüm args'ları attığımızda, nasıl oluyor da bilgisayar args'ları tek tek alıp, str'deki değerler ile eşleyebiliyor? 
 yani ilk olarak " 'str' = 'c' " olduğunda 'a'yı okunduktan sonra " 'str' = 'd' " olduğunda 7'yi almalı.
