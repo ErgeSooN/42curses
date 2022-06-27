@@ -22,7 +22,7 @@ Aşağıda belirtilen yerde tanımda ilk parametre, str (tırnak içerisindeki b
 ~~~
 	va_start(args, str);
 ~~~
-Peki bunu nasıl yapıyor? Va_args yardımıyla.
+Peki bunu nasıl yapıyor? Va_args yardımıyla. 
 
 3- va_args   --> "str" == c ise; "..." içerisnde olan argüanların tamamını va_arg'a atarız. 
 va_arg; args'deki değerin, data type'ını (veri tipini) verir.
